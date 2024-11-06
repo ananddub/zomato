@@ -91,7 +91,7 @@ const TabIconFocused = memo<TabProps>(({ name }) => {
             <CusotmText
                 style={[
                     textStyleInActive,
-                    { color: (name === "Live") ? Colors.active : isVeg ? Colors.primary : Colors.active }
+                    { color: (name === "Live") ? Colors.active : isVeg ? Colors.active : Colors.primary }
                 ]}>
                 {name}
             </CusotmText>
@@ -151,6 +151,7 @@ export function CustomTabIconComponent(props: BottomTabBarProps) {
                     paddingBottom: bottom.bottom,
                     backgroundColor: isLiveTabFocused ? Colors.dark : Colors.background,
                     justifyContent: 'center',
+                    paddingHorizontal: 5
                 }
             ]}
         >
@@ -194,14 +195,14 @@ export function CustomTabIconComponent(props: BottomTabBarProps) {
             </View>
             <Animated.View
                 style={[
-                    styles.slidingIndicator(width - 3),
-                    indicatorStyle,
-                    {
-                        backgroundColor: isVeg ? Colors.primary : Colors.active
+                    styles.slidingIndicatorContainer(width - 3),
+                    indicatorStyle, {
+                        backgroundColor: (isLiveTabFocused) ? '#fff' : isVeg ? Colors.active : Colors.primary,
                     }
                 ]}
-            />
+            >
 
+            </Animated.View>
         </Animated.View>
     </>
 }

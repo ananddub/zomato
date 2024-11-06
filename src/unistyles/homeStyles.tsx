@@ -45,6 +45,7 @@ export const homeStyles = createStyleSheet(({ colors, device, border }) => ({
     },
     rollingText: {
         opacity: 0.6,
+        textAlign: 'left'
     },
     flexRowBetween: {
         flexDirection: 'row',

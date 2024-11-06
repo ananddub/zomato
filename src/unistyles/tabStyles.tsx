@@ -45,13 +45,21 @@ export const tabStyles = createStyleSheet(({ colors, fonts, device }) => ({
         borderBottomWidth: 2,
         borderBottomColor: colors.primary,
     },
-    slidingIndicator: (width) => ({
+    slidingIndicatorContainer: (width) => ({
         position: 'absolute',
         top: 0,
-        height: 3,
+        height: 3.5,
+        paddingHorizontal: 20,
+        width: width,
         borderBottomLeftRadius: 40,
         borderBottomRightRadius: 40,
-        width: width,
+
+    }),
+    slidingIndicator: () => ({
+        zIndex: 4,
+        flex: 1,
+        width: "100%",
+        height: 30,
     }),
     blinkitLogoContainer: {
         justifyContent: 'flex-end',
