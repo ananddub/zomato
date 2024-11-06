@@ -127,7 +127,7 @@ export function CustomTabIconComponent(props: BottomTabBarProps) {
     })
     const indicatorStyle = useAnimatedStyle(() => {
         return {
-            left: withTiming(startX + (width * state.index))
+            left: withTiming(startX + (width * state.index), { duration: 350 })
         }
     })
 
@@ -136,9 +136,9 @@ export function CustomTabIconComponent(props: BottomTabBarProps) {
             (x: number, y: number, width: number, height: number, pageX: number, pageY: number) => {
                 if (index === 0) {
                     setStartX(pageX)
+                    slidesValue.value = withTiming(pageX)
+                    setWidth(width)
                 }
-                slidesValue.value = withTiming(pageX, { duration: 1000 })
-                setWidth(width)
             },
         );
     }
@@ -197,7 +197,7 @@ export function CustomTabIconComponent(props: BottomTabBarProps) {
                     styles.slidingIndicator(width - 3),
                     indicatorStyle,
                     {
-                        backgroundColor: isVeg ? Colors.active : Colors.primary
+                        backgroundColor: isVeg ? Colors.primary : Colors.active
                     }
                 ]}
             />

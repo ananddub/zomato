@@ -6,7 +6,7 @@ import { emptyStyles } from '@unistyles/emptyStyles'
 export default function DiningScreen() {
     const { styles } = useStyles(emptyStyles)
     return (
-        <View style={styles.container}>
+        <View style={styles.container(false)}>
             <Image
                 source={require("@assets/images/coming_soon.jpg")}
                 style={styles.emptyImage}
