@@ -5,11 +5,11 @@ import { BOTTOM_TAB_HEIGHT } from "./Constants";
 
 export const tabStyles = createStyleSheet(({ colors, fonts, device }) => ({
     tabContainer: {
-        width: device.width * 0.82,
+        width: '100%',
+        flex: 1,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingLeft: 15
     },
     tabBarContainer: {
         width: '100%',
@@ -45,14 +45,14 @@ export const tabStyles = createStyleSheet(({ colors, fonts, device }) => ({
         borderBottomWidth: 2,
         borderBottomColor: colors.primary,
     },
-    slidingIndicator: {
+    slidingIndicator: (width) => ({
         position: 'absolute',
         top: 0,
         height: 3,
         borderBottomLeftRadius: 40,
         borderBottomRightRadius: 40,
-        width: '15%',
-    },
+        width: width,
+    }),
     blinkitLogoContainer: {
         justifyContent: 'flex-end',
         alignItems: 'flex-end',

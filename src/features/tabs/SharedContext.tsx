@@ -1,6 +1,5 @@
 import { createContext, useContext } from "react";
 import Animated, { useSharedValue, withTiming } from "react-native-reanimated";
-
 interface SharedStateContextType {
     scrollY: Animated.SharedValue<number>;
     scrollGlobalY: Animated.SharedValue<number>;

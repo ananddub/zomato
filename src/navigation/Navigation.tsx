@@ -13,7 +13,7 @@ export default function Navgation() {
             ref={navigationRef}
         >
             <Stack.Navigator
-                initialRouteName='SplashScreen'
+                initialRouteName='UserBottomTab'
                 screenOptions={{
                     headerShown: false,
                     animation: 'fade'

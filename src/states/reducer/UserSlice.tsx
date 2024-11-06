@@ -27,6 +27,8 @@ export const userSlice = createSlice({
 export const { setUser, setIsVeg } = userSlice.actions
 export const selectUser = (state: RootState) => state?.user?.user
 
+export const userReducer = userSlice.reducer
 export default userSlice.reducer
+
 
 
