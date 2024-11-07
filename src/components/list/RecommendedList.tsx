@@ -1,4 +1,4 @@
-import { StyleSheet, ScrollView, Text, Image, View } from 'react-native'
+import { StyleSheet, ScrollView, Text, Image, View, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useStyles } from 'react-native-unistyles'
 import { cardStyles } from '@unistyles/cardStyles'
@@ -7,13 +7,16 @@ import { recommendedListData } from '@utils/dummyData'
 import ScalePress from '@components/ui/ScalePress'
 import { navigate } from '@utils/NavigationUtils'
 import { configureStore } from '@reduxjs/toolkit'
+import CusotmText from '@components/global/CustomText'
+import { Colors } from '@unistyles/Constants'
+import { RFValue } from 'react-native-responsive-fontsize'
+import { Bookmark } from 'lucide-react-native'
+import CustomGradient from '@components/global/CustomGradient'
 
 export default function RecommendedList() {
     const { styles } = useStyles(cardStyles)
-
-    console.log(recommendedListData)
     const renderItem = ({ item, index }: any) => {
-        console.log(index)
+        console.log(item.discountAmount)
         return (
             <ScalePress style={styles.itemContainer}
                 onPress={() => { navigate('ResturantScreen', { item }) }}
@@ -23,6 +26,49 @@ export default function RecommendedList() {
                         source={{ uri: item?.imageUrl }}
                         style={styles.itemImage}
                     />
+                    {
+                        item?.discount &&
+                        <View style={styles.discountContainer}>
+                            <CusotmText color={Colors.background}
+                                fontSize={RFValue(8)}
+                                fontFamily='Okra-Bold'
+                            >
+                                {item?.discount}
+                            </CusotmText>
+                            {
+                                item?.discountAmount &&
+                                <CusotmText
+                                    color={Colors.background}
+                                    fontSize={RFValue(6)}
+                                    style={{ lineHeight: 11 }}
+                                    fontFamily='Okra-Medium'
+                                >
+                                    {item?.discountAmount}
+                                </CusotmText>
+                            }
+                        </View>
+                    }
+                    <TouchableOpacity style={styles.bookmarkIcon}>
+                        <Bookmark
+                            color={Colors.background}
+                            fill="grey"
+                            size={RFValue(18)}
+                        />
+                    </TouchableOpacity>
+                    <CustomGradient postion="bottom" />
+                </View>
+                <View style={styles.itemInfo}>
+                    <CusotmText color={Colors.lightText}
+                        fontSize={RFValue(8)}
+                        numberOfLines={1}
+                        fontFamily='Okra-Medium'>
+                        {item?.name}
+                    </CusotmText>
+                    <View style={styles.flexRow}>
+                        <Image
+
+                        />
+                    </View>
                 </View>
             </ScalePress>
         )

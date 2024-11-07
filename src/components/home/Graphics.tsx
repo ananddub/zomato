@@ -12,7 +12,7 @@ export default function Graphics() {
                 autoPlay={Platform.OS === "android" ? false : true}
                 loop={Platform.OS === "android" ? false : true}
                 hardwareAccelerationAndroid
-                style={[styles.lottie]}
+                style={[styles.lottie,]}
             />
         </View>
     )

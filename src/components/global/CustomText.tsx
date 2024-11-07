@@ -49,12 +49,13 @@ export default function CusotmText({
         computedFontSize = RFValue(defaultSize)
     }
     const fontFamilyStyles = {
-        fontFamily
+        fontFamily,
     }
     return (
         <Text
             style={[styles.text, {
                 color: color || Colors.text,
+                textAlign: 'left',
                 fontSize: computedFontSize
             },
                 fontFamilyStyles,

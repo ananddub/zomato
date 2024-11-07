@@ -28,7 +28,6 @@ export default function SearchBar() {
     const { scrollGlobalY } = useShareState()
     const textColorAnimation = useAnimatedStyle(() => {
         const textcolor = interpolate(scrollGlobalY.value, [0, 50], [255, 0])
-        //console.log("textcolor", textcolor)
         return {
             color: `rgb(${textcolor},${textcolor},${textcolor})`
         }
@@ -38,7 +37,7 @@ export default function SearchBar() {
     }
     return (<>
         <View style={[styles.flexRowBetween, styles.padding]} >
-            <TouchableOpacity style={styles.searchInputContainer} activeOpacity={0.8}>
+            <TouchableOpacity style={styles.searchInputContainer} activeOpacity={0.94}>
                 <Search
                     color={isVegMode ? Colors.active : Colors.primary}
                     strokeWidth={2}

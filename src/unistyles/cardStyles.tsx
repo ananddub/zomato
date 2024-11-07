@@ -3,7 +3,7 @@ import { createStyleSheet } from "react-native-unistyles";
 export const cardStyles = createStyleSheet(({ colors, device, border }) => ({
     recommendedContainer: {
         marginTop: 25,
-        paddingLeft:10
+        paddingLeft: 10
     },
     mainPadding: {
         padding: 10
@@ -27,7 +27,7 @@ export const cardStyles = createStyleSheet(({ colors, device, border }) => ({
     },
     bookmarkIcon: {
         position: 'absolute',
-        zIndex: 2,
+        zIndex: 8,
         top: 5,
         right: 5,
     },

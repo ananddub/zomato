@@ -4,7 +4,7 @@ import { useStyles } from 'react-native-unistyles'
 import { homeStyles } from '@unistyles/homeStyles'
 import CusotmText from '@components/global/CustomText'
 import { Colors } from '@unistyles/Constants'
-import { Bookmark } from 'lucide-react-native'
+import { Bookmark, House } from 'lucide-react-native'
 import { RFValue } from 'react-native-responsive-fontsize'
 import RecommendedList from '@components/list/RecommendedList'
 
@@ -40,4 +40,3 @@ export default function ExploreSection() {
     )
 }
 
-const styles = StyleSheet.create({})
