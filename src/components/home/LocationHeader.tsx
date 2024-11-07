@@ -53,7 +53,7 @@ export default function LocationHeader() {
                             color={textcolor}
                             style={{ textAlign: 'left' }}
                             fontFamily='Okra-Medium'
-                        > Lucknow, Uttar Pradesh</CusotmText>
+                        >Lucknow, Uttar Pradesh</CusotmText>
                     </View>
                 </View>
                 <View style={styles.flexRowGap}>
