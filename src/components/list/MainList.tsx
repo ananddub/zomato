@@ -24,9 +24,10 @@ export default function MainList() {
     const [isNearEnd, setIsNearEnd] = useState<boolean>(false)
 
     const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
+        console.log('scrolling ')
         const currentScrollY = event.nativeEvent.contentOffset.y
         const isScrollDown = currentScrollY > prevScrollY.current
-        //console.log("offsetY", currentScrollY)
+
         scrollY.value = isScrollDown ? withTiming(1, { duration: 300 }) : withTiming(0, { duration: 300 })
         scrollGlobalY.value = currentScrollY
         prevScrollY.current = currentScrollY
@@ -68,24 +69,23 @@ export default function MainList() {
     }
 
     return (
-        <>
-            <SectionList
-                ref={sectionListRef}
-                sections={sectionData}
-                overScrollMode='always'
-                onScroll={handleScroll}
-                scrollEventThrottle={16}
-                bounces={false}
-                nestedScrollEnabled
-                showsVerticalScrollIndicator={false}
-                keyExtractor={(_, index) => "section" + index.toString()}
-                contentContainerStyle={styles.listContainer}
-                viewabilityConfig={viewAbiltiyConfig}
-                onViewableItemsChanged={onViewableItemChanged}
-                stickySectionHeadersEnabled={true}
-            />
+        <SectionList
+            ref={sectionListRef}
+            sections={sectionData}
+            overScrollMode='always'
+            onScroll={handleScroll}
+            scrollEventThrottle={16}
+            bounces={false}
+            nestedScrollEnabled
+            scrollEnabled
+            showsVerticalScrollIndicator={false}
+            keyExtractor={(_, index) => "section" + index.toString()}
+            contentContainerStyle={styles.listContainer}
+            viewabilityConfig={viewAbiltiyConfig}
+            onViewableItemsChanged={onViewableItemChanged}
+            stickySectionHeadersEnabled={true}
+        />
 
-        </>
     )
 }
 
