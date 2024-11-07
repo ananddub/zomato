@@ -1,4 +1,5 @@
 import { createStyleSheet } from "react-native-unistyles";
+import { useWindowDimensions } from "react-native";
 
 export const splashStyles = createStyleSheet(({ colors, device }) => ({
     container: {
@@ -54,15 +55,16 @@ export const loginStyles = createStyleSheet(({ colors, device, border }) => ({
         textAlign: 'center',
         marginHorizontal: 20
     },
-    breakerContainer: {
+    breakerContainer: (width = useWindowDimensions().width, paddingHorizontal = 10) => ({
         alignItems: 'center',
         justifyContent: 'center',
+        paddingHorizontal,
         gap: 10,
         overflow: "hidden",
-        width: '100%',
+        width,
         marginTop: 20,
         marginBottom: 10
-    },
+    }),
     horizontalLine: {
         height: 1,
         width: '100%',

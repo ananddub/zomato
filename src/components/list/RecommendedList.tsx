@@ -66,8 +66,17 @@ export default function RecommendedList() {
                     </CusotmText>
                     <View style={styles.flexRow}>
                         <Image
-
+                            source={require('@assets/icons/clock.png')}
+                            style={styles.clockIcon}
                         />
+                        <CusotmText
+                            fontFamily='Okra-Medium'
+                            color={Colors.lightText}
+                            fontSize={RFValue(7)}
+                            numberOfLines={1}
+                        >
+                            {item?.time} • {item?.distance}
+                        </CusotmText>
                     </View>
                 </View>
             </ScalePress>

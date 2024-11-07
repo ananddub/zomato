@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, useWindowDimensions } from 'react-native'
 import React from 'react'
 import { useStyles } from 'react-native-unistyles'
 import { loginStyles } from '@unistyles/authStyles'
@@ -9,7 +9,7 @@ interface Props {
 export default function BreakerText({ text }: Props) {
     const { styles } = useStyles(loginStyles)
     return (
-        <View style={styles.breakerContainer}>
+        <View style={[styles.breakerContainer()]}>
             <View style={styles.horizontalLine} />
             <CusotmText
                 fontSize={12}

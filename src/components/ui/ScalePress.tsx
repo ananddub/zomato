@@ -1,6 +1,6 @@
-import { Pressable, StyleSheet, Text, TouchableOpacity, View, ViewStyle } from 'react-native'
+import { TouchableOpacity, ViewStyle } from 'react-native'
 import React from 'react'
-import Animated, { useAnimatedStyle, useSharedValue, withSpring, withTiming } from 'react-native-reanimated'
+import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated'
 
 interface Props {
     onLongPress?: () => void
@@ -13,13 +13,7 @@ interface Props {
 export default function ScalePress({ onLongPress, children, style, onLayout, onPress }: Props) {
     const salce = useSharedValue(1)
     const animatedStyle = useAnimatedStyle(() => {
-        return {
-            transform: [
-                {
-                    scale: salce.value
-                }
-            ]
-        }
+        return { transform: [{ scale: salce.value }] }
     })
     const onPressIn = () => {
         salce.value = withTiming(0.9, { duration: 200 })
@@ -37,7 +31,7 @@ export default function ScalePress({ onLongPress, children, style, onLayout, onP
             onPressIn={onPressIn}
             onPressOut={onPressOut}
             onLongPress={onLongPress}
-            activeOpacity={0.7}
+            activeOpacity={0.9}
         >
             <Animated.View style={[style, animatedStyle]} >
                 {children}
@@ -46,4 +40,3 @@ export default function ScalePress({ onLongPress, children, style, onLayout, onP
     )
 }
 
-const styles = StyleSheet.create({})
