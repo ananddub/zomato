@@ -9,7 +9,6 @@
       "@components/*": ["src/components/*"],
       "@features/*": ["src/features/*"],
       "@navigation/*": ["src/navigation/*"],
-      "@components/*": ["src/components/*"],
       "@unistyles/*": ["src/unistyles/*"],
       "@states/*": ["src/states/*"],
       "@services/*": ["src/services/*"],
