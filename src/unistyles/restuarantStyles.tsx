@@ -6,7 +6,7 @@ import { RFValue } from "react-native-responsive-fontsize";
 export const restaurantStyles = createStyleSheet(({ device, colors, border }) => ({
     listContainer: {
         paddingBottom: 300,
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
     },
     shadowBottom: {
         shadowOffset: { width: 1, height: 18 },
