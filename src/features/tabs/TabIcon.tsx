@@ -75,7 +75,7 @@ const TabIcon = memo<TabProps>(({ name }) => {
 
 const TabIconFocused = memo<TabProps>(({ name }) => {
     const isVeg = useAppSelector(state => state.user.isVeg)
-    console.log("isVeg-->", isVeg)
+    //console.log("isVeg-->", isVeg)
 
     return (
         <View style={tabStyle}  >

@@ -3,10 +3,11 @@ import React from 'react'
 import Animated, { Extrapolate, interpolate, useAnimatedStyle } from 'react-native-reanimated'
 import { useStyles } from 'react-native-unistyles'
 import { homeStyles } from '@unistyles/homeStyles'
-import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
 import { useShareState } from '@features/tabs/SharedContext'
 import Graphics from '@components/home/Graphics'
 import HeaderSection from '@components/home/HeaderSection'
+import MainList from '@components/list/MainList'
 
 export default function DeliveryScreen() {
     const insight = useSafeAreaInsets()
@@ -46,7 +47,7 @@ export default function DeliveryScreen() {
         }
     })
     return (
-        <View>
+        <View style={styles.container}>
             <View style={{ height: Platform.OS === "android" ? insight.top : 0 }} />
             <Animated.View style={[moveUpStyle]} >
                 <Animated.View style={[moveUpStyleNotExtraPolate]}>
@@ -54,6 +55,9 @@ export default function DeliveryScreen() {
                 </Animated.View>
                 <Animated.View style={[backgroundColorChange, styles.topHeader]}>
                     <HeaderSection />
+                </Animated.View>
+                <Animated.View style={[moveUpStyle]}>
+                    <MainList />
                 </Animated.View>
             </Animated.View>
         </View>

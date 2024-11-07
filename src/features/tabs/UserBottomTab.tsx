@@ -12,7 +12,10 @@ export default function UserBottomTab() {
     return (
         <Tab.Navigator
             tabBar={(props: any) => <CustomTabIconComponent {...props} />}
-            screenOptions={{ headerShown: false, tabBarHideOnKeyboard: true }}
+            screenOptions={{
+                headerShown: false,
+                tabBarHideOnKeyboard: true
+            }}
 
         >
             <Tab.Screen name="Delivery" component={DeliveryScreen} />

@@ -4,13 +4,14 @@ import { useShareState } from '@features/tabs/SharedContext'
 import { useStyles } from 'react-native-unistyles'
 import { homeStyles } from '@unistyles/homeStyles'
 import Animated, { Extrapolate, interpolate, useAnimatedStyle } from 'react-native-reanimated'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
 import Icon from '@components/global/Icon'
 import CusotmText from '@components/global/CustomText'
 
 export default function LocationHeader() {
     const { scrollGlobalY, scrollY } = useShareState()
     const { styles } = useStyles(homeStyles)
+    const { top } = useSafeAreaInsets()
     const textcolor = "#fff"
     const opacityFadingStyle = useAnimatedStyle(() => {
         const opacity = interpolate(
@@ -26,7 +27,7 @@ export default function LocationHeader() {
 
     return (
         <Animated.View style={[opacityFadingStyle]}>
-            <SafeAreaView />
+            <View style={{ height: top }} />
             <View style={styles.flexRowBetween}>
                 <View style={styles.flexRowGap}>
                     <Icon
@@ -35,21 +36,25 @@ export default function LocationHeader() {
                         size={32}
                         iconFamily='MaterialCommunityIcons'
                     />
-                </View>
-                <View>
-                    <TouchableOpacity style={styles.flexRow}>
-                        <CusotmText variant='h5' color={textcolor} fontFamily='Okra-Bold' > Erangle Ponchinki </CusotmText>
-                        <Icon
-                            name="chevron-down"
+                    <View style={{ flexDirection: 'column', }}>
+                        <TouchableOpacity style={styles.flexRow}>
+                            <CusotmText variant='h5'
+                                style={{ textAlign: 'left' }}
+                                color={textcolor}
+                                fontFamily='Okra-Bold' >Erangle Ponchinki </CusotmText>
+                            <Icon
+                                name="chevron-down"
+                                color={textcolor}
+                                size={24}
+                                iconFamily='MaterialCommunityIcons'
+                            />
+                        </TouchableOpacity>
+                        <CusotmText
                             color={textcolor}
-                            size={24}
-                            iconFamily='MaterialCommunityIcons'
-                        />
-                    </TouchableOpacity>
-                    <CusotmText
-                        color={textcolor}
-                        fontFamily='Okra-Medium'
-                    >Lucknow, Uttar Pradesh</CusotmText>
+                            style={{ textAlign: 'left' }}
+                            fontFamily='Okra-Medium'
+                        > Lucknow, Uttar Pradesh</CusotmText>
+                    </View>
                 </View>
                 <View style={styles.flexRowGap}>
                     <TouchableOpacity style={styles.translation}>
