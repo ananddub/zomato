@@ -89,10 +89,10 @@ const TabIconFocused = memo<TabProps>(({ name }) => {
                 style={[styles, { tintColor: (name === "Live") ? undefined : isVeg ? Colors.active : Colors.primary }]}
             />
             <CusotmText
-                style={[
-                    textStyleInActive,
-                    { color: (name === "Live") ? Colors.active : isVeg ? Colors.active : Colors.primary }
-                ]}>
+                style={{
+                    ...textStyleInActive,
+                    ...{ color: (name === "Live") ? Colors.active : isVeg ? Colors.active : Colors.primary }
+                }}>
                 {name}
             </CusotmText>
         </View>
@@ -142,7 +142,8 @@ export function CustomTabIconComponent(props: BottomTabBarProps) {
             },
         );
     }
-    return <>
+    return( 
+    <View>
         <Animated.View
             style={[
                 styles.tabBarContainer,
@@ -204,7 +205,8 @@ export function CustomTabIconComponent(props: BottomTabBarProps) {
 
             </Animated.View>
         </Animated.View>
-    </>
+    </View>
+    )
 }
 
 

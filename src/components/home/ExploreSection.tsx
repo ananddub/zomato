@@ -5,6 +5,7 @@ export default function ExploreSection() {
     return (
         <View>
             <Text>ExploreSection</Text>
+            <Text>ExploreSection</Text>
         </View>
     )
 }

@@ -54,7 +54,7 @@ export default function MainList() {
         prevScrollYTopButton.current = scrollGlobalY.value
         return {
             opacity,
-            translateY: [{ translateY }]
+            transform: [{ translateY }]
         }
     })
 
