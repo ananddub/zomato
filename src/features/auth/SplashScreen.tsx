@@ -1,5 +1,5 @@
 import { splashStyles } from '@unistyles/authStyles';
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import { Text, View, StyleSheet, StatusBar, Platform, Image } from 'react-native';
 import { useStyles } from 'react-native-unistyles';
 import Animated, { FadeInDown } from 'react-native-reanimated'
@@ -8,7 +8,7 @@ import CusotmText from '@components/global/CustomText';
 
 const SplashScreen = () => {
     const { styles } = useStyles(splashStyles)
-    React.useEffect(() => {
+    useEffect(() => {
         const timeid = setTimeout(() => {
             resetAndNavigate('LoginScreen')
         }, 3000)
