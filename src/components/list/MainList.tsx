@@ -75,7 +75,7 @@ export default function MainList() {
                 return null
             }
             else {
-                return <Animated.View style={[isResturantVisible || !isNearEnd ? styles.shadowBottom : null]}>
+                return <Animated.View style={[styles.shadowBottom]}>
                     <SortingAndFilters menuTitle='Sort' option={filtersOption} />
                 </Animated.View>
             }
