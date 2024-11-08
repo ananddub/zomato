@@ -35,7 +35,7 @@ export default function SearchBar() {
     const handleVegMode = () => {
         dispatch(setIsVeg(!isVegMode))
     }
-    return (<>
+    return (<View>
         <View style={[styles.flexRowBetween, styles.padding]} >
             <TouchableOpacity style={styles.searchInputContainer} activeOpacity={0.94}>
                 <Search
@@ -78,6 +78,6 @@ export default function SearchBar() {
                 />
             </Pressable>
         </View>
-    </>)
+    </View>)
 }
 

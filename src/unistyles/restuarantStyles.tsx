@@ -1,8 +1,7 @@
 import { createStyleSheet } from "react-native-unistyles";
 import { Colors } from "./Constants";
-import { Platform } from "react-native";
+import { Platform, useWindowDimensions } from "react-native";
 import { RFValue } from "react-native-responsive-fontsize";
-
 export const restaurantStyles = createStyleSheet(({ device, colors, border }) => ({
     listContainer: {
         paddingBottom: 300,
@@ -12,7 +11,8 @@ export const restaurantStyles = createStyleSheet(({ device, colors, border }) =>
         shadowOffset: { width: 1, height: 18 },
         shadowOpacity: 0.08,
         elevation: 5,
-        shadowRadius: 10,
+        width: device.width,
+        height: RFValue(30),
         shadowColor: colors.dark,
         backgroundColor: colors.background,
     },
