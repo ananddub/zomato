@@ -7,13 +7,10 @@ import AnimatedTab from '@features/tabs/AnimatedTab'
 import Test from '@features/temp/Test'
 import Test1 from '@features/temp/Test1'
 
-
 const Stack = createNativeStackNavigator()
 export default function Navgation() {
     return (
-        <NavigationContainer
-            ref={navigationRef}
-        >
+        <NavigationContainer ref={navigationRef}>
             <Stack.Navigator
                 initialRouteName='SplashScreen'
                 screenOptions={{
@@ -23,7 +20,6 @@ export default function Navgation() {
             >
                 <Stack.Screen
                     component={SplashScreen}
-
                     name="SplashScreen"
                 />
                 <Stack.Screen
