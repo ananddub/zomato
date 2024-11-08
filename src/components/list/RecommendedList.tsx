@@ -16,7 +16,7 @@ import CustomGradient from '@components/global/CustomGradient'
 export default function RecommendedList() {
     const { styles } = useStyles(cardStyles)
     const renderItem = ({ item, index }: any) => {
-        console.log(item.discountAmount)
+        // console.log(item.discountAmount)
         return (
             <ScalePress style={styles.itemContainer}
                 onPress={() => { navigate('ResturantScreen', { item }) }}

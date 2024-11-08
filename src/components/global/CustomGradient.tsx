@@ -9,14 +9,14 @@ interface Props {
 }
 
 const darkColors = [
-    'rgba(0,0,0,0.9) ',
-    'rgba(0,0,0,0.7) ',
-    'rgba(0,0,0,0.4) ',
+    'rgba(0,0,0,0.9)',
+    'rgba(0,0,0,0.7)',
+    'rgba(0,0,0,0.4)',
     'rgba(0,0,0,0.1)',
     'rgba(0,0,0,0) '
 ]
 const lightColors = [
-    'rgba(255,255,255,1) ',
+    'rgba(255,255,255,1)',
     'rgba(255,255,255,0.9)',
     'rgba(255,255,255,0.1)'
 ]

@@ -1,4 +1,5 @@
 import { createStyleSheet } from "react-native-unistyles";
+import { useWindowDimensions } from "react-native";
 
 export const cardStyles = createStyleSheet(({ colors, device, border }) => ({
     recommendedContainer: {
@@ -65,6 +66,7 @@ export const cardStyles = createStyleSheet(({ colors, device, border }) => ({
         borderColor: colors.border
     },
     centerText: {
+        width: '100%',
         textAlign: 'center',
         opacity: 0.4,
         marginVertical: 10,

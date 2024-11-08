@@ -24,7 +24,7 @@ export default function MainList() {
     const [isNearEnd, setIsNearEnd] = useState<boolean>(false)
 
     const handleScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
-        console.log('scrolling ')
+        // console.log('scrolling ')
         const currentScrollY = event.nativeEvent.contentOffset.y
         const isScrollDown = currentScrollY > prevScrollY.current
 
