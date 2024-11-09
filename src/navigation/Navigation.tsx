@@ -13,7 +13,7 @@ const Stack = createNativeStackNavigator()
 export default function Navgation() {
     return (
         <NavigationContainer ref={navigationRef}>
-            <Stack.Navigator initialRouteName='UserBottomTab'
+            <Stack.Navigator initialRouteName='SplashScreen'
                 screenOptions={{
                     headerShown: false,
                     contentStyle: { backgroundColor: 'white' },
@@ -24,6 +24,7 @@ export default function Navgation() {
                 <Stack.Screen component={LoginScreen} name="LoginScreen" />
                 <Stack.Screen component={AnimatedTab} name="UserBottomTab" />
                 <Stack.Screen name="ResturantScreen" component={ResturantScreen} />
+
 
                 {/*here only for testing not real*/}
                 <Stack.Screen options={{ headerShown: true, animation: 'none' }} component={Test} name="Test" />

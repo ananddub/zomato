@@ -41,7 +41,6 @@ export default function MainList() {
 
         const isNearEnd = offset + layoutHeight > (containerHeight - 500)
         setIsNearEnd(isNearEnd)
-
     }
 
     const handleScrollToTop = async () => {
@@ -108,6 +107,5 @@ export default function MainList() {
                 onViewableItemsChanged={onViewableItemChanged}
             />
         </SafeAreaView>
-
     )
 }
