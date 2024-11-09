@@ -6,6 +6,7 @@ import { useStyles } from 'react-native-unistyles'
 import { restaurantStyles } from '@unistyles/restuarantStyles'
 import CusotmText from '@components/global/CustomText'
 import StarRating from '@components/ui/StarRating'
+import DotedLine from '@components/ui/DotedLine'
 
 export default function ResturantCard({ item }: any) {
     const { styles } = useStyles(restaurantStyles)
@@ -29,6 +30,16 @@ export default function ResturantCard({ item }: any) {
                         </View>
                         <StarRating rating={item?.rating} />
                     </View>
+                    <DotedLine />
+                    {
+                        item?.discount && (
+                            <CusotmText
+                                variant='h6'
+                                style={styles.details}>
+                                {item?.discount} {item?.discountAmount && `• ${item?.discountAmount}`}
+                            </CusotmText>
+                        )
+                    }
                 </View>
             </View>
         </ScalePress>

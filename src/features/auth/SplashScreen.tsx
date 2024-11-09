@@ -28,12 +28,8 @@ const SplashScreen = () => {
                     source={require("@assets/images/tree.png")}
                     style={styles.treeImage}
                 />
-                <CusotmText
-                    variant='h5'
-                    style={styles.msgText}
-                    fontFamily='Okra-Medium'
-                    color='white'
-                >
+                <CusotmText variant='h5' style={styles.msgText}
+                    fontFamily='Okra-Medium' color='white'>
                     Carbon and Plastic Neutral Deliveries in India
                 </CusotmText>
             </Animated.View>

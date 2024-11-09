@@ -13,16 +13,22 @@ const Stack = createNativeStackNavigator()
 export default function Navgation() {
     return (
         <NavigationContainer ref={navigationRef}>
+            <Stack.Navigator initialRouteName='UserBottomTab'
+                screenOptions={{
+                    headerShown: false,
+                    contentStyle: { backgroundColor: 'white' },
+                    animation: 'ios_from_right'
+                }}>
 
-            <Stack.Navigator initialRouteName='Solar' screenOptions={{ headerShown: false, animation: 'fade' }}>
-                <Stack.Screen options={{ headerShown: true, animation: 'none' }}
-                    component={SolarSystem} name="Solar" />
-                <Stack.Screen name="ResturantScreen" component={ResturantScreen} />
-                <Stack.Screen component={SplashScreen} name="SplashScreen" />
+                <Stack.Screen component={SplashScreen} options={{ animation: 'fade' }} name="SplashScreen" />
                 <Stack.Screen component={LoginScreen} name="LoginScreen" />
                 <Stack.Screen component={AnimatedTab} name="UserBottomTab" />
+                <Stack.Screen name="ResturantScreen" component={ResturantScreen} />
+
+                {/*here only for testing not real*/}
                 <Stack.Screen options={{ headerShown: true, animation: 'none' }} component={Test} name="Test" />
                 <Stack.Screen options={{ headerShown: true, title: "Next Page", animation: 'none' }} component={Test1} name="Test1" />
+                <Stack.Screen options={{ headerShown: true, animation: 'none' }} component={SolarSystem} name="Solar" />
             </Stack.Navigator>
 
         </NavigationContainer>

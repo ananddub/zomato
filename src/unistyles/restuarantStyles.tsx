@@ -91,6 +91,7 @@ export const restaurantHeaderStyles = createStyleSheet(({ device, colors, border
     },
     flexRowGap: {
         flexDirection: 'row',
+        justifyContent: 'space-between',
         alignItems: 'center',
         gap: 8
     },
@@ -108,6 +109,15 @@ export const restaurantHeaderStyles = createStyleSheet(({ device, colors, border
     },
     mainPadding: {
         paddingHorizontal: 10,
+
+    },
+    borderStyle: (borderStyle: 'dotted' | 'solid' | 'dashed', colors = '#1c1c1c') => {
+        return {
+            borderWidth: 1,
+            height: 10,
+            borderColor: colors,
+            borderStyle: borderStyle
+        }
     },
     scrollContainer: {
         backgroundColor: colors.background,

@@ -1,0 +1,40 @@
+import { TouchableOpacity, View } from 'react-native'
+import React from 'react'
+import { useRoute } from '@react-navigation/native'
+import { useStyles } from 'react-native-unistyles'
+import { restaurantHeaderStyles } from '@unistyles/restuarantStyles'
+import { useSafeAreaInsets } from 'react-native-safe-area-context'
+import { ArrowLeft } from 'lucide-react-native'
+import { RFValue } from 'react-native-responsive-fontsize'
+import { Colors } from '@unistyles/Constants'
+import CusotmText from '@components/global/CustomText'
+import { goBack } from '@utils/NavigationUtils'
+
+export default function ResturantScreen() {
+    const route = useRoute() as any
+    const restorant = route?.params?.item
+    const { styles } = useStyles(restaurantHeaderStyles)
+    const inset = useSafeAreaInsets()
+    return (
+        <View style={styles.headerContainer}>
+            <View>
+                <View style={{ height: inset.top }} />
+                <View style={styles.flexRowGap}>
+                    <TouchableOpacity onPress={() => goBack()}>
+                        <ArrowLeft size={RFValue(20)} color={Colors.text} />
+                    </TouchableOpacity>
+                    <View>
+                        <CusotmText fontFamily='Okra-Medium' fontSize={RFValue(7.5)} color={Colors.text}>
+                            {restorant?.name}
+                        </CusotmText>
+                        <CusotmText fontFamily='Okra-Bold' fontSize={RFValue(9)} color={Colors.text}>
+                            Recommended for you
+                        </CusotmText>
+                    </View>
+
+                </View>
+            </View>
+        </View>
+    )
+}
+
