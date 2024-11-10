@@ -21,7 +21,8 @@ export const store = configureStore({
             serializableCheck: {
                 ignoredActions: [FLUSH, REGISTER, REHYDRATE, PAUSE, PERSIST, PURGE]
             }
-        })
+        }),
+
 });
 
 
