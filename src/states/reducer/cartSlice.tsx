@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "@states/store";
 
 
@@ -43,7 +43,11 @@ export const cartSlice = createSlice({
     name: "cart",
     initialState,
     reducers: {
-
+        addItemToCart: (state, action: PayloadAction<{
+            resturant: RestaurantDetails,
+            items: CartItem
+        }>) => {
+        },
     }
 })
 export const selectCarts = (state: RootState) => state?.cart

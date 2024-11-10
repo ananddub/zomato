@@ -1,4 +1,4 @@
-import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import { PayloadAction, createSelector, createSlice } from '@reduxjs/toolkit'
 import { RootState } from '../store'
 interface UserState {
     user: any
@@ -26,7 +26,11 @@ export const userSlice = createSlice({
 
 export const { setUser, setIsVeg } = userSlice.actions
 export const selectUser = (state: RootState) => state?.user?.user
-
+export const selectResturantCartItem = (resturantId: string, itemId: string) => {
+    return createSelector(
+        (state: RootState) => state?.cart?.carts?.find(cart => cart.restaurant.id === resturantId)?.items,
+        (items) => items?.find(item => item.id === itemId) || null)
+}
 export const userReducer = userSlice.reducer
 export default userSlice.reducer
 
