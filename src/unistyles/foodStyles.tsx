@@ -16,6 +16,10 @@ export const foodStyles = createStyleSheet(({ device, colors, border }) => ({
         resizeMode: 'contain',
         marginBottom: 10
     },
+    animatedView: {
+        height: '100%',
+        justifyContent: 'center'
+    },
     animatedCount: {
         fontSize: RFValue(16),
         color: 'white',

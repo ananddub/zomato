@@ -13,7 +13,7 @@ const Stack = createNativeStackNavigator()
 export default function Navgation() {
     return (
         <NavigationContainer ref={navigationRef}>
-            <Stack.Navigator initialRouteName='Solar'
+            <Stack.Navigator initialRouteName='UserBottomTab'
                 screenOptions={{
                     headerShown: false, contentStyle: { backgroundColor: 'white' },
                     animation: 'ios_from_right'

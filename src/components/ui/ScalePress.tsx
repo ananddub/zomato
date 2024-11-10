@@ -8,9 +8,10 @@ interface Props {
     onPress?: () => void
     onLayout?: (e: any) => void
     style?: ViewStyle | ViewStyle[]
+    tflex?: number
 }
 
-export default function ScalePress({ onLongPress, children, style, onLayout, onPress }: Props) {
+export default function ScalePress({ onLongPress, children, style, onLayout, onPress, tflex = 1 }: Props) {
     const salce = useSharedValue(1)
     const animatedStyle = useAnimatedStyle(() => {
         return { transform: [{ scale: salce.value }] }
@@ -26,12 +27,12 @@ export default function ScalePress({ onLongPress, children, style, onLayout, onP
     return (
         <TouchableOpacity
             onLayout={onLayout}
-            style={{ flex: 1 }}
             onPress={onPress}
             onPressIn={onPressIn}
+            style={{ flex: tflex }}
             onPressOut={onPressOut}
             onLongPress={onLongPress}
-            activeOpacity={0.9}
+            activeOpacity={0.75}
         >
             <Animated.View style={[style, animatedStyle]} >
                 {children}
